@@ -1,0 +1,126 @@
+archive
+notes
+projects
+
+data/archive:
+
+data/notes:
+
+data/projects:
+processed
+raw
+
+data/projects/processed:
+
+data/projects/raw:
+This is line 1 with content
+This is line 2 with multiple      spaces
+This is line 3 with a	tab character
+
+Line 6 after blank lines
+Line 7 with more content
+Line 8 - testing testing
+Line 9 is here too
+Line 10 has	tabs and    spaces
+Line 11 continues
+Line 12 is the last initial line
+Appended line 1
+Appended line 2
+Appended line 3
+
+
+
+=== ls -l ===
+total 8
+-rw-r--r--  1 kevin  staff   13 Jan 20 20:50 -dashfile.txt
+drwxr-xr-x  5 kevin  staff  160 Jan 20 20:50 data
+drwxr-xr-x  5 kevin  staff  160 Jan 20 20:50 outputs
+drwxr-xr-x  2 kevin  staff   64 Jan 20 20:36 scripts
+
+=== ls -lh ===
+total 8
+-rw-r--r--  1 kevin  staff    13B Jan 20 20:50 -dashfile.txt
+drwxr-xr-x  5 kevin  staff   160B Jan 20 20:50 data
+drwxr-xr-x  5 kevin  staff   160B Jan 20 20:50 outputs
+drwxr-xr-x  2 kevin  staff    64B Jan 20 20:36 scripts
+
+=== ls -ld data ===
+drwxr-xr-x  5 kevin  staff  160 Jan 20 20:50 data
+
+=== ls -ltr ===
+total 8
+drwxr-xr-x  2 kevin  staff   64 Jan 20 20:36 scripts
+drwxr-xr-x  5 kevin  staff  160 Jan 20 20:50 data
+drwxr-xr-x  5 kevin  staff  160 Jan 20 20:50 outputs
+-rw-r--r--  1 kevin  staff   13 Jan 20 20:50 -dashfile.txt
+
+=== ls -A ===
+-dashfile.txt
+data
+outputs
+scripts
+
+=== ls -R data ===
+archive
+notes
+projects
+
+data/archive:
+
+data/notes:
+notes1.txt
+
+data/projects:
+processed
+raw
+
+data/projects/processed:
+
+data/projects/raw:
+=== Before permission change ===
+-rw-r--r--  1 kevin  staff  16 Jan 20 20:50 data/notes/perms.txt
+=== After permission change (640) ===
+-rw-r-----  1 kevin  staff  16 Jan 20 20:50 data/notes/perms.txt
+=== Original umask ===
+umask: 0022
+=== Changed umask to 077 ===
+-rw-------  1 kevin  staff  0 Jan 20 20:50 data/u_after.txt
+-rw-r--r--  1 kevin  staff  0 Jan 20 20:50 data/u_before.txt
+=== Before deleting target ===
+-rw-r--r--  2 kevin  staff  12 Jan 20 20:50 data/hardlink.txt
+-rw-r--r--  2 kevin  staff  12 Jan 20 20:50 data/link_target.txt
+lrwxr-xr-x  1 kevin  staff  20 Jan 20 20:50 data/symlink.txt -> data/link_target.txt
+=== After deleting target ===
+-rw-r--r--  1 kevin  staff  12 Jan 20 20:50 data/hardlink.txt
+lrwxr-xr-x  1 kevin  staff  20 Jan 20 20:50 data/symlink.txt -> data/link_target.txt
+=== Find all .txt files ===
+data/symlink.txt
+data/u_after.txt
+data/u_before.txt
+data/notes/perms.txt
+data/notes/notes1.txt
+data/hardlink.txt
+=== Find files larger than 0 bytes ===
+data
+data/archive
+data/symlink.txt
+data/projects
+data/projects/processed
+data/projects/raw
+data/notes
+data/notes/perms.txt
+data/notes/notes1.txt
+data/hardlink.txt
+=== Word count on found files ===
+       0 data/u_after.txt
+       0 data/u_before.txt
+       2 data/notes/perms.txt
+      66 data/notes/notes1.txt
+       2 data/hardlink.txt
+=== diff output ===
+3c3
+< walnuts
+---
+> grapes
+=== cmp output ===
+data/a.txt data/b.txt differ: char 16, line 3

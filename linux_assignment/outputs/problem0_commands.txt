@@ -1,0 +1,5 @@
+=== pwd output ===
+/Users/kevin/cmps260/linux_assignment
+
+=== whoami output ===
+kevin

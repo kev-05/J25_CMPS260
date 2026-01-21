@@ -1,0 +1,39 @@
+=== GREP/EGREP/FGREP COMMANDS ===
+1. Find lines starting with 'var':
+5:var=_ok2
+6:var2=Bad-Name
+7:var3=good_name_3
+
+2. Find time patterns:
+time=9:05 am
+time=12:30 pm
+time=1:01 pm
+
+3. Find literal 'a*b*' string:
+literal=a*b* and also ^$ appears here
+
+=== TR COMMANDS ===
+1. Convert to uppercase:
+BEAT A BRAT ON A BOAT
+B E A T
+B O A T
+
+2. Delete all digits:
+beat a brat on a boat
+b e a t
+b o a t
+EMPTYLINE:
+var=_ok
+
+=== SED COMMANDS ===
+1. Replace 'amount' with 'price' globally:
+price=$19.99
+price=$100.00
+price=$7.5
+
+2. Delete lines containing 'EMPTYLINE':
+beat a brat on a boat
+b e a t
+b o a t
+var=_ok2
+var2=Bad-Name

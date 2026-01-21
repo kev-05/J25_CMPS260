@@ -1,0 +1,15 @@
+This is line 1 with content
+This is line 2 with multiple      spaces
+This is line 3 with a	tab character
+
+
+Line 6 after blank lines
+Line 7 with more content
+Line 8 - testing testing
+Line 9 is here too
+Line 10 has	tabs and    spaces
+Line 11 continues
+Line 12 is the last initial line
+Appended line 1
+Appended line 2
+Appended line 3
